@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+    <h2>Dashboard</h2>
+    <!-- <button routerLink="/calculate-interest" (click)="fetchDeposits()">Calculate Interest</button>
+    <button routerLink="/create-deposit" (click)="navigateToNewDeposit()">Create Deposit</button> -->
+    <!-- <table *ngIf="deposits.length > 0"> -->
+    <table>
+        <thead>
+        <tr>
+          <th>User Id</th>
+          <th>Username</th>
+          <th>Amount</th>
+          <th>No of Years</th>
+          <th>Start Date</th>
+          <th>Maturity Date</th>
+          <th>Deposit Type</th>
+          <th>Interest Rate</th>
+          <th>Deposit ID</th>
+          <th>Interest</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let deposit of deposits">
+          <td>{{ deposit.userid }}</td>
+          <td>{{ deposit.username }}</td>
+          <td>{{ deposit.amount }}</td>
+          <td>{{ deposit.noofYears }}</td>
+          <td>{{ deposit.startDate }}</td>
+          <td>{{ deposit.maturityDate }}</td>
+          <td>{{ deposit.depositType }}</td>
+          <td>{{ deposit.interestRate }}</td>
+          <td>{{ deposit.depositId }}</td>
+          <td>{{ calculateInterest(deposit) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

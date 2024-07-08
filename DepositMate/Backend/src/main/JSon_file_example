@@ -1,0 +1,25 @@
+To create deposit
+{
+
+ "amount": 40000.00,
+  "noOfYears": 15,
+  "startDate": "2024-06-06T00:00:00Z",
+  "depositType": "Fixed Deposit",
+  "interestRate": 5.0
+}
+For sign up
+{
+     "username": "Rithu",
+      "age": 21,
+       "gender": "Female",
+        "phonenumber": "1287398262",
+        "aadhar": "192875938413",
+       "email": "rithu@gmail.com",
+       "password": "Hello"
+}
+
+for sign in
+{
+       "email": "rithu@gmail.com",
+       "password": "Hello"
+}

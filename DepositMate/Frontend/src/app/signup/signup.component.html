@@ -1,0 +1,42 @@
+<header class="header"><img src="/DepositMate_transparent.png" class="logo"></header>
+
+<div class="login-container">
+    <h2>Sign Up</h2>
+    <form #form="ngForm" (ngSubmit)="onSignup(form)">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" name="name" [(ngModel)]="username" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" name="age" [(ngModel)]="age" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select gender</mat-label>
+        <mat-select name="gender" [(ngModel)]="gender" required>
+          <mat-option value="male">Male</mat-option>
+          <mat-option value="female">Female</mat-option>
+          <mat-option value="trans">Trans</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone number</mat-label>
+        <input matInput type="tel" name="phone" [(ngModel)]="phonenumber" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="email" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Aadhar number</mat-label>
+        <input matInput type="text" name="aadhar" [(ngModel)]="aadhar" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" [(ngModel)]="password" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Sign Up</button>
+    </form>
+    <p>Already a user? <a href="#" routerLink="/login" (click)="openLogin()">Sign in</a>.</p>
+  </div>
+  

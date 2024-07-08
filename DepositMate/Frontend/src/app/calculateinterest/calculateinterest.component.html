@@ -1,0 +1,71 @@
+<div class="container">
+    <h1> Calculate Deposit</h1>
+    
+    <form [formGroup]="rdForm" (ngSubmit)="handleRD()">
+      <h2>Recurrent Deposit</h2>
+      <div class="form-group">
+        <label for="rd-amount">Monthly Amount</label>
+        <input type="number" id="rd-amount" formControlName="amount" class="form-control" placeholder="Enter monthly amount">
+        <div *ngIf="rdForm.controls['amount'].invalid && rdForm.controls['amount'].touched" class="error">
+          Please enter a valid amount.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rd-term">Term (months)</label>
+        <input type="number" id="rd-term" formControlName="term" class="form-control" placeholder="Enter term in months">
+        <div *ngIf="rdForm.controls['term'].invalid && rdForm.controls['term'].touched" class="error">
+          Please enter a valid term.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Calculate RD</button>
+    </form>
+  
+    <form [formGroup]="fdForm" (ngSubmit)="handleFD()">
+      <h2>Fixed Deposit</h2>
+      <div class="form-group">
+        <label for="fd-amount">Amount</label>
+        <input type="number" id="fd-amount" formControlName="amount" class="form-control" placeholder="Enter deposit amount">
+        <div *ngIf="fdForm.controls['amount'].invalid && fdForm.controls['amount'].touched" class="error">
+          Please enter a valid amount.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fd-term">Term (months)</label>
+        <input type="number" id="fd-term" formControlName="term" class="form-control" placeholder="Enter term in months">
+        <div *ngIf="fdForm.controls['term'].invalid && fdForm.controls['term'].touched" class="error">
+          Please enter a valid term.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Calculate FD</button>
+    </form>
+  
+    <form [formGroup]="cumulativeForm" (ngSubmit)="handleCumulative()">
+      <h2>Cumulative Deposit</h2>
+      <div class="form-group">
+        <label for="cumulative-amount">Amount</label>
+        <input type="number" id="cumulative-amount" formControlName="amount" class="form-control" placeholder="Enter deposit amount">
+        <div *ngIf="cumulativeForm.controls['amount'].invalid && cumulativeForm.controls['amount'].touched" class="error">
+          Please enter a valid amount.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cumulative-term">Term (months)</label>
+        <input type="number" id="cumulative-term" formControlName="term" class="form-control" placeholder="Enter term in months">
+        <div *ngIf="cumulativeForm.controls['term'].invalid && cumulativeForm.controls['term'].touched" class="error">
+          Please enter a valid term.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Calculate CD</button>
+    </form>
+  
+    <div *ngIf="result" class="result">
+      <h2>Calculation Result</h2>
+      <pre>{{ result }}</pre>
+    </div>
+  
+    <div>
+      <button class="btn btn-primary" routerLink="/create-deposit" (click)="createDeposit()">Create Deposit</button>
+      <button routerLink="/dashboard" (click)="navigateToDashboard()" class="btn btn-primary">Back to Dashboard</button>
+    </div>
+  
+  </div>
